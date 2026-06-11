@@ -1,0 +1,19 @@
+h1{
+    color:#ffefaf;
+    text-align: center;
+    text-shadow:black 1px 0 10px;
+    background: #765034;
+}
+div.box {
+    background:#ffefaf;
+}
+div.zentai {
+    display: grid;     
+    grid-auto-rows: 200px 200px;        
+    grid-gap: 10px; 
+	padding: 5px;   
+	width: 900px;
+}
+h2{
+    color:#765034;
+}
