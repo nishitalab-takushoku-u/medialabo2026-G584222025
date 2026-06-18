@@ -13,3 +13,10 @@ h2{
 body{
      background: #ffefaf;
 }
+h3{
+    color:white;
+    text-align: center;
+    text-shadow:black 1px 0 10px;
+    background: #765034;
+    
+}
