@@ -13,7 +13,11 @@ div.zentai {
     grid-gap: 10px; 
 	padding: 5px;   
 	width: 900px;
+    border-radius: 10px;
 }
 h2{
     color:#765034;
+}
+body{
+     background: #89c997;
 }
