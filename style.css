@@ -4,19 +4,13 @@ h1{
     text-shadow:black 1px 0 10px;
     background: #765034;
 }
-div.box {
-    background:#ffefaf;
-}
-div.zentai {
-    display: grid;     
-    grid-auto-rows: 200px 200px;        
-    grid-gap: 10px; 
-	padding: 5px;   
-	width: 900px;
-    border-radius: 10px;
-}
+
 h2{
     color:#765034;
+    font-family: cursive;
+	color:#3f3faf;
+	background:linear-gradient(to right,white,#ffefaf);
+	margin: 5px;
 }
 body{
      background: #89c997;
