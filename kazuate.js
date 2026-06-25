@@ -9,6 +9,7 @@ let kaisu = 0;
 let p;
 let i;
 let n;
+let seikai = 0;
 // そのほか，必要に応じて変数を宣言してもよい
 
 // ボタンを押した後の処理をする関数 hantei() の定義
@@ -29,14 +30,15 @@ function hantei() {
   // 　　　　  正解/不正解のときのメッセージを表示する
   if(Number(yoso)===kotae && kaisu<4){
     n.textContent = '正解です. おめでとう!';
-  }else if(kaisu===3){
-    n.textContent = 'まちがい. 残念でした答えは'+kotae+'です.';
-  }else if(Number(yoso)<kotae && kaisu<4){
-    n.textContent = 'まちがい. 答えはもっと大きいですよ';
-  }else if(Number(yoso)>kotae && kaisu<4){
-    n.textContent = 'まちがい. 答えはもっと小さいですよ';
-  }else if(kaisu>=4){
+    seikai = 1;
+  }else if(kaisu>=4 || seikai===1){
     n.textContent = '答えは'+kotae+'でした. すでにゲームは終わっています';
+  }else if(kaisu===3 && seikai!==1){
+    n.textContent = 'まちがい. 残念でした答えは'+kotae+'です.';
+  }else if(Number(yoso)<kotae && kaisu<4 && seikai!==1){
+    n.textContent = 'まちがい. 答えはもっと大きいですよ';
+  }else if(Number(yoso)>kotae && kaisu<4 && seikai!==1){
+    n.textContent = 'まちがい. 答えはもっと小さいですよ';
   }
   // ここまで: 正解判定する
 }
