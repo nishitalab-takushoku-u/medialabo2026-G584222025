@@ -31,3 +31,6 @@ function hyouji(){
     } 
 	u.insertAdjacentElement('afterend', p);
 }
+let b = document.querySelector('button#show'); 
+// ここまで: ボタンを押した時のイベントハンドラとして hantei を登録
+b.addEventListener('click', hyouji); 
