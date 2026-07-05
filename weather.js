@@ -14,7 +14,16 @@ function print(data) {
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
-
+  let div = document.createElement('div');
+  let body = document.querySelector('body');
+  body.insertAdjacentElement('beforeend', div);
+  div.setAttribute('id', 'result');
+  let span = document.querySelector('span#kansu');
+  //span.textContent = data.result
+  let u = document.createElement('ul');
+  let l = document.createElement('li');
+  u.insertAdjacentElement('beforeend', l);
+  l.textContent = '緯度：'+ data.coord.lon;
 }
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
