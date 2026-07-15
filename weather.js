@@ -1,6 +1,6 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
-function print(data) {
+/*function print(data) {
   console.log('緯度：'+data.coord.lon);
   console.log('経度：'+data.coord.lat);
   console.log('天気：'+data.weather[0].description);
@@ -10,7 +10,7 @@ function print(data) {
   console.log('風速：'+data.wind.speed);
   console.log('風向：'+data.wind.deg);
   console.log('都市名：'+data.name);
-}
+}*/
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
@@ -22,30 +22,67 @@ function printDom(data) {
   let u = document.createElement('ul');
   div.insertAdjacentElement('beforeend', u);
 
-  let item1 = document.createElement('li');
-  item1.textContent = '都市名：' + data.name;
-  u.insertAdjacentElement('beforeend', item1);
+  if (document.querySelector("#city").checked) {
+    let li = document.createElement("li");
+    li.textContent = "都市名：" + data.name;
+    u.insertAdjacentElement('beforeend', li);
+  }
+  if (document.querySelector("#lat").checked) {
+    let li = document.createElement("li");
+    li.textContent = "緯度：" + data.coord.lat;
+    u.insertAdjacentElement('beforeend', li);
+  }
+  if (document.querySelector("#lon").checked) {
+    let li = document.createElement("li");
+    li.textContent = "経度：" + data.coord.lon;
+    u.insertAdjacentElement('beforeend', li);
+  }
+   if (document.querySelector("#weather").checked) {
+    let li = document.createElement("li");
+    li.textContent = "天気：" + data.weather[0].description;
+    u.insertAdjacentElement('beforeend', li);
+  }
+  if (document.querySelector("#temp").checked) {
+    let li = document.createElement("li");
+    li.textContent = "気温：" + data.main.temp + " ℃";
+    u.insertAdjacentElement('beforeend', li);
+  }
+  if (document.querySelector("#temp_min").checked) {
+    let li = document.createElement("li");
+    li.textContent = "最低気温：" + data.main.temp_min;
+    u.insertAdjacentElement('beforeend', li);
+  }
+  if (document.querySelector("#temp_max").checked) {
+    let li = document.createElement("li");
+    li.textContent = "最高気温：" + data.main.temp_max;
+    u.insertAdjacentElement('beforeend', li);
+  }
+  if (document.querySelector("#humidity").checked) {
+    let li = document.createElement("li");
+    li.textContent = "湿度：" + data.main.humidity;
+    u.insertAdjacentElement('beforeend', li);
+  }
+  if (document.querySelector("#speed").checked) {
+    let li = document.createElement("li");
+    li.textContent = "風速：" + data.wind.speed;
+    u.insertAdjacentElement('beforeend', li);
+  }
+  if (document.querySelector("#deg").checked) {
+    let li = document.createElement("li");
+    li.textContent = "風向：" + data.wind.deg;
+    u.insertAdjacentElement('beforeend', li);
+  }
 
-  let item2 = document.createElement('li');
-  item2.textContent = '緯度：' + data.coord.lat;
-  u.insertAdjacentElement('beforeend', item2);
-
-  let item3 = document.createElement('li');
-  item3.textContent = '経度：' + data.coord.lon;
-  u.insertAdjacentElement('beforeend', item3);
-
-  let item4 = document.createElement('li');
-  item4.textContent = '天気：' + data.weather[0].description;
-  u.insertAdjacentElement('beforeend', item4);
-
-  let item5 = document.createElement('li');
-  item5.textContent = '気温：' + data.main.temp + ' ℃';
-  u.insertAdjacentElement('beforeend', item5);
+  let img = document.createElement("img");
+  img.src = "https://tsukatte.com/wp-content/uploads/2021/06/cloudy.png";
+  div.insertAdjacentElement("beforeend", img);
 }
 
 
-  let button = document.querySelector('button#kekka');
-  button.addEventListener('click',printDom);
+let button = document.querySelector('button#kekka');
+button.addEventListener('click', function () {
+  printDom(data);
+});
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 
 
