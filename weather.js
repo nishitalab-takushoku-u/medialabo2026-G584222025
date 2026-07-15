@@ -54,8 +54,8 @@ function printDom(data) {
 }
 
 
-  let button = document.querySelector('#send');
-  button.addEventListener('click', sendRequest);
+  let button = document.querySelector('button#show');
+  button.addEventListener('click',printDom);
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 
 
