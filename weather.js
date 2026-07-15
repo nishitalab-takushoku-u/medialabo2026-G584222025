@@ -1,6 +1,6 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
-function print(data) {
+/*function print(data) {
   console.log('緯度：'+data.coord.lon);
   console.log('経度：'+data.coord.lat);
   console.log('天気：'+data.weather[0].description);
@@ -10,11 +10,11 @@ function print(data) {
   console.log('風速：'+data.wind.speed);
   console.log('風向：'+data.wind.deg);
   console.log('都市名：'+data.name);
-}
+}*/
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
-  let div = document.createElement('div');
+  /*let div = document.createElement('div');
   let body = document.querySelector('body');
   body.insertAdjacentElement('beforeend', div);
   div.setAttribute('id', 'result');
@@ -23,9 +23,39 @@ function printDom(data) {
   let u = document.createElement('ul');
   let l = document.createElement('li');
   u.insertAdjacentElement('beforeend', l);
-  l.textContent = '緯度：'+ data.coord.lon;
+  l.textContent = '緯度：'+ data.coord.lon;*/
+  let div = document.createElement('div');
+  let body = document.querySelector('body');
+  body.insertAdjacentElement('beforeend', div);
+  div.setAttribute('id', 'result');
+
+  let u = document.createElement('ul');
+  div.insertAdjacentElement('beforeend', u);
+
+  let item1 = document.createElement('li');
+  item1.textContent = '都市名：' + data.name;
+  u.insertAdjacentElement('beforeend', item1);
+
+  let item2 = document.createElement('li');
+  item2.textContent = '緯度：' + data.coord.lat;
+  u.insertAdjacentElement('beforeend', item2);
+
+  let item3 = document.createElement('li');
+  item3.textContent = '経度：' + data.coord.lon;
+  u.insertAdjacentElement('beforeend', item3);
+
+  let item4 = document.createElement('li');
+  item4.textContent = '天気：' + data.weather[0].description;
+  u.insertAdjacentElement('beforeend', item4);
+
+  let item5 = document.createElement('li');
+  item5.textContent = '気温：' + data.main.temp + ' ℃';
+  u.insertAdjacentElement('beforeend', item5);
 }
 
+
+  let button = document.querySelector('#send');
+  button.addEventListener('click', sendRequest);
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 
 
