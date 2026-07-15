@@ -54,7 +54,7 @@ function printDom(data) {
 }
 
 
-  let button = document.querySelector('button#show');
+  let button = document.querySelector('button#kekka');
   button.addEventListener('click',printDom);
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 
