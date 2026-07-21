@@ -1,6 +1,57 @@
-body{
+/*body{
      background: #88cdfb;
 }
 h1{
     color: 45deg, blue, red;
+}*/
+body {
+    font-family: sans-serif;
+    background-color: #e6f2ff;
+    text-align: center;
+}
+
+h1 {
+    color: navy;
+}
+
+h2 {
+    color: rgb(84, 84, 84);
+    font-size: 18px;
+}
+
+input[type="text"] {
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: skyblue;
+    border: none;
+}
+
+button:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+
+#result {
+    width: 450px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid gray;
+}
+
+#result ul {
+    list-style: none;
+    padding: 0;
+}
+
+#result li {
+    margin: 8px 0;
+}
+
+#result img {
+    width: 300px;
+    margin-top: 15px;
 }
